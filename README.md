@@ -18,7 +18,32 @@ The project started as coursework for a deep learning course at Ho Chi Minh City
 | Path | Content |
 |---|---|
 | `notebooks/01_linear_mlp_baselines.ipynb` | EDA, data pipeline, training engine, linear and MLP baselines |
+| `notebooks/02_architecture_comparison.ipynb` | Full study: all nine models, three seeds, error analysis and interpretability |
 | `AI_USAGE.md` | How AI tools were used in this project |
+
+## Results
+
+Mean ± standard deviation over three seeds on the official test set, trained for 20 epochs on a Tesla T4.
+
+| Model | Params | Test acc. (%) | Test macro-F1 | Train time (s) |
+|---|---:|---:|---:|---:|
+| CNN (2 stages, 32-64 channels) | 468,010 | 93.93 ± 0.16 | 0.9391 ± 0.0015 | 102.6 |
+| GRU (rows, 2 × 128) | 161,034 | 91.01 ± 0.33 | 0.9098 ± 0.0034 | 88.7 |
+| LSTM (rows, 2 × 128) | 214,282 | 90.39 ± 0.12 | 0.9038 ± 0.0011 | 89.8 |
+| MLP-C (784-512-256-10) | 537,354 | 89.93 ± 0.08 | 0.8992 ± 0.0005 | 81.7 |
+| MLP-B (784-256-10) | 204,042 | 89.27 ± 0.24 | 0.8925 ± 0.0023 | 74.1 |
+| MLP-A (784-128-10) | 102,026 | 88.87 ± 0.09 | 0.8885 ± 0.0009 | 73.3 |
+| Transformer (4 × 4 patches) | 139,018 | 88.88 ± 0.21 | 0.8885 ± 0.0023 | 220.9 |
+| Transformer, no positional encoding | 135,818 | 85.44 ± 0.34 | 0.8541 ± 0.0034 | 219.6 |
+| Linear | 7,850 | 82.60 ± 0.15 | 0.8244 ± 0.0016 | 66.3 |
+
+Key findings:
+
+- **Spatial structure beats parameter count.** With 87% of the parameters of MLP-C, the CNN is 3.99 points better in macro-F1.
+- **Row sequences help moderately.** The LSTM and GRU beat every MLP with less than half of MLP-C's parameters, but stay well below the CNN.
+- **Attention needs to be told where things are.** Removing positional encoding costs the Transformer 3.43 points; under a 20-epoch budget the Transformer only matches the smallest MLP.
+- **The GRU is enough for 28 steps.** It is slightly more accurate than the LSTM with 75% of the parameters.
+- **One error group dominates.** Confusion among T-shirt/top, Pullover, Coat and Shirt is the largest error group for every model; Shirt is the hardest class.
 
 ## Highlights
 

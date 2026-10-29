@@ -14,6 +14,16 @@ This file documents how generative AI tools were used in this project.
 | AI contribution | Identified missing EDA, test-set-based model selection, data-loading-bound timing and order-dependent seeding; proposed and implemented the fixes |
 | How the output was verified | [to be completed: e.g. re-ran the full notebook on a Colab T4 GPU, checked parameter counts by hand, compared API usage with the PyTorch documentation] |
 
+| Field | Entry |
+|---|---|
+| Tool | Claude Code (Anthropic), model Claude Opus 5.5 |
+| Used by | Dương Nguyễn Tấn Đạt |
+| Date | 29 October 2026 |
+| Purpose | Implementing the CNN, LSTM/GRU and Transformer models, the full comparison, error analysis and interpretability sections |
+| Affected files | `notebooks/02_architecture_comparison.ipynb`, `README.md` |
+| AI contribution | Wrote the model classes, experiment loop, analysis code and the discussion text; revised the discussion after the three-seed GPU run so that every claim matches the measured numbers |
+| How the output was verified | [to be completed] |
+
 ## Other tools
 
 [to be completed: list any other AI tool used, or write "None"]
