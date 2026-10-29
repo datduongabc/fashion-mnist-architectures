@@ -26,4 +26,5 @@ This file documents how generative AI tools were used in this project.
 
 ## Other tools
 
-[to be completed: list any other AI tool used, or write "None"]
+None.
+Claude Code with Claude Opus 5.5 was the only AI tool used in this project.
