@@ -1,0 +1,28 @@
+# Dataset is downloaded by torchvision at run time
+data/
+
+# Large binary artifacts are distributed separately (see README)
+checkpoints/
+*.pt
+*.zip
+
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.lof
+*.lot
+*.lol
+*.out
+*.toc
+*.synctex.gz
+_minted*/
+
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
