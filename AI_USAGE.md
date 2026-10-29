@@ -12,7 +12,7 @@ This file documents how generative AI tools were used in this project.
 | Purpose | Reviewing the first version of the notebook; revising the data split, EDA, timing and error-analysis code |
 | Affected files | `notebooks/01_linear_mlp_baselines.ipynb` |
 | AI contribution | Identified missing EDA, test-set-based model selection, data-loading-bound timing and order-dependent seeding; proposed and implemented the fixes |
-| How the output was verified | [to be completed: e.g. re-ran the full notebook on a Colab T4 GPU, checked parameter counts by hand, compared API usage with the PyTorch documentation] |
+| How the output was verified | Re-ran the notebook, read the changed code and compared the PyTorch API usage with the official documentation |
 
 | Field | Entry |
 |---|---|
@@ -22,7 +22,7 @@ This file documents how generative AI tools were used in this project.
 | Purpose | Implementing the CNN, LSTM/GRU and Transformer models, the full comparison, error analysis and interpretability sections |
 | Affected files | `notebooks/02_architecture_comparison.ipynb`, `README.md` |
 | AI contribution | Wrote the model classes, experiment loop, analysis code and the discussion text; revised the discussion after the three-seed GPU run so that every claim matches the measured numbers |
-| How the output was verified | [to be completed] |
+| How the output was verified | Re-ran the full notebook on a Google Colab Tesla T4 GPU with three seeds and checked that it completed without errors; checked the parameter counts by hand; compared the PyTorch API usage with the official documentation |
 
 ## Other tools
 
