@@ -1,3 +1,6 @@
+# Local report sources (kept on this machine only)
+report/
+
 # Dataset is downloaded by torchvision at run time
 data/
 
