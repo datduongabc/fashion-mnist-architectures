@@ -59,6 +59,8 @@ Key findings:
    The dataset is downloaded automatically, and the split seed, training seeds and hyperparameters are fixed in the notebook.
 3. The run writes `results/` (configuration, environment, split indices, per-run metrics, training histories and figures) and `checkpoints/` (best checkpoint per model and seed).
 
+The results and all 27 checkpoints of the three-seed Tesla T4 run are available as [`a1_results.zip`](https://drive.google.com/file/d/150g5cS32hSYkwV9tk13GSz8qnhv4u55V/view?usp=sharing).
+
 To run locally instead, install Python 3.10+ with `torch`, `torchvision`, `numpy`, `pandas`, `matplotlib`, `seaborn` and `scikit-learn`, then open the notebook with Jupyter.
 
 ## Reproducibility
